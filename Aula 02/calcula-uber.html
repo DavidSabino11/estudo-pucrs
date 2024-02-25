@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Uber</title>
+</head>
+<script>
+
+    function FormataMoeda(algumValor){
+        return algumValor.toFixed(2).replace('.','.');
+    }
+
+    function calculaCorrida(){
+        var tarifaDinamica = 1.4;
+        var distanciaKM = campoDistancia.value * tarifaDinamica;
+        var tempoMin = campoTempo.value * 0.26;
+        var valorCorrida = distanciaKM + tempoMin;
+
+        
+    if(distanciaKM && tempoMin){
+        alert("O valor da corrida e: " + FormataMoeda(valorCorrida));
+    }else {
+        alert("Digite os valores!")
+    }
+    }
+</script>
+<body>
+    <input placeholder="Distancia em KM" id="campoDistancia" />
+    <input placeholder="Tempo em  minutos" id="campoTempo" />
+    <button onclick="calculaCorrida()">Calcula</button>
+</body>
+</html>
